@@ -1,15 +1,15 @@
 services:
   zenithproxy:
-    build: .
+    image: ghcr.io/rfresh2/zenithproxy:latest
     ports:
       - '25565:25565'
     environment:
-#      ZENITH_PORT: optional
-#      ZENITH_IP: optional
-#      ZENITH_DISCORD_DISABLED: optional
       ZENITH_DISCORD_TOKEN: editme
       ZENITH_DISCORD_CHANNEL_ID: editme
       ZENITH_DISCORD_ROLE_ID: editme
 #      ZENITH_DISCORD_CHAT_RELAY_CHANNEL: optional
-    stdin_open: true  # `docker compose run -it zenithproxy`
+#      ZENITH_PORT: optional
+#      ZENITH_IP: optional
+#      ZENITH_DISCORD_DISABLED: optional
+    stdin_open: true
     tty: true

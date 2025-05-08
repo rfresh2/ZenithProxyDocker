@@ -5,5 +5,4 @@ RUN apt-get update && apt-get install -y wget unzip
 RUN wget https://github.com/rfresh2/ZenithProxy/releases/download/launcher-v3/ZenithProxy-launcher-linux-amd64.zip
 RUN unzip ZenithProxy-launcher-linux-amd64.zip
 RUN rm ZenithProxy-launcher-linux-amd64.zip
-EXPOSE 25565
 CMD ./launch --unattended
