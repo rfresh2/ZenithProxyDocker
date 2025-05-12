@@ -1,6 +1,6 @@
 services:
   zenithproxy:
-    build: .
+    image: ghcr.io/rfresh2/zenithproxy:latest
     ports:
       - '25565:25565'
     environment:
