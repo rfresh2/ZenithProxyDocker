@@ -1,11 +1,11 @@
-name: Publish ZenithProxy Docker Image to Github Packages (amd64)
+name: Publish ZenithProxy Docker Image to Github Packages (arm64)
 
 on:
   workflow_dispatch:
 
 jobs:
   publish:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
 
@@ -22,7 +22,7 @@ jobs:
       - name: Build and push multi-platform image
         uses: docker/build-push-action@v6
         with:
-          file: ./Dockerfile
-          platforms: linux/amd64
+          file: ./Dockerfile-arm64
+          platforms: linux/arm64
           push: true
-          tags: ghcr.io/rfresh2/zenithproxy:latest
+          tags: ghcr.io/rfresh2/zenithproxy:latest-arm64
