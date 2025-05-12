@@ -1,8 +1,0 @@
-FROM arm64v8/debian:stable-slim
-RUN mkdir /opt/ZenithProxy
-WORKDIR /opt/ZenithProxy
-RUN apt-get update && apt-get install -y wget unzip
-RUN wget https://github.com/rfresh2/ZenithProxy/releases/download/launcher-v3/ZenithProxy-launcher-linux-aarch64.zip
-RUN unzip ZenithProxy-launcher-linux-aarch64.zip
-RUN rm ZenithProxy-launcher-linux-aarch64.zip
-CMD ./launch --unattended

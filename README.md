@@ -29,7 +29,7 @@ Edit the `docker-compose.yml` file to set required environment variables
 Then run:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Docker CLI:
