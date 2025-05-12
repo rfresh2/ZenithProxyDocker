@@ -25,7 +25,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/asowneryt/zenithproxy:latest
+          tags: ghcr.io/rfresh2/zenithproxy:latest
   publish-arm64:
     runs-on: ubuntu-24.04-arm
     steps:
@@ -47,4 +47,4 @@ jobs:
           file: ./Dockerfile-arm64
           platforms: linux/arm64
           push: true
-          tags: ghcr.io/asowneryt/zenithproxy:latest-arm64
+          tags: ghcr.io/rfresh2/zenithproxy:latest-arm64
