@@ -56,3 +56,11 @@ Or build an image yourself:
 ```bash
 docker build -t zenithproxy .
 ```
+
+## Environment Variables
+
+Environment variables are used to configure the ZenithProxy launcher without input prompts in the terminal.
+
+Many are optional, some are required.
+
+For a full list, see docker-compose.yml

@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM debian:stable-slim
+FROM --platform=$TARGETPLATFORM ubuntu:noble
 
 ARG TARGETARCH
 ENV ARCH_FILENAME=""
