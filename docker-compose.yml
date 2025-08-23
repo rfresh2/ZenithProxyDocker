@@ -7,11 +7,11 @@ services:
       ZENITH_DISCORD_TOKEN: editme
       ZENITH_DISCORD_CHANNEL_ID: editme
       ZENITH_DISCORD_ROLE_ID: editme
-#      ZENITH_MC_VERSION: optional - "1.21.0", "1.21.4, or "1.21.5"
-#      ZENITH_PLATFORM: optional - "java" or "linux"
+#      ZENITH_MC_VERSION: optional - default:"1.21.4", latest mc version is also usually supported, others exist but are deprecated
+#      ZENITH_PLATFORM: optional - default:"linux", or "java"
 #      ZENITH_DISCORD_CHAT_RELAY_CHANNEL: optional
-#      ZENITH_PORT: optional
-#      ZENITH_IP: optional
+#      ZENITH_PORT: optional - default:"25565"
+#      ZENITH_IP: optional - default:"localhost"
 #      ZENITH_DISCORD_DISABLED: optional
     stdin_open: true
     tty: true
