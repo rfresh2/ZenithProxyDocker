@@ -4,14 +4,17 @@ services:
     ports:
       - '25565:25565'
     environment:
+#     Discord setup guide: https://wiki.2b2t.vc/Discord-Bot-Guide/
       ZENITH_DISCORD_TOKEN: editme
       ZENITH_DISCORD_CHANNEL_ID: editme
       ZENITH_DISCORD_ROLE_ID: editme
-#      ZENITH_MC_VERSION: optional - default:"1.21.4", latest mc version is also usually supported, others exist but are deprecated
-#      ZENITH_PLATFORM: optional - default:"linux", or "java"
 #      ZENITH_DISCORD_CHAT_RELAY_CHANNEL: optional
-#      ZENITH_PORT: optional - default:"25565"
-#      ZENITH_IP: optional - default:"localhost"
-#      ZENITH_DISCORD_DISABLED: optional
+#      ZENITH_DISCORD_DISABLED: optional, if set "true" the above discord env variables do not need to be set
+#      ZENITH_MC_VERSION: optional - default:"1.21.4"
+#      ZENITH_PLATFORM: optional - default:"linux", or "java"
+#         more info: https://wiki.2b2t.vc/ZenithProxy/Setup/#release-channels
+#      ZENITH_PORT: optional - default:"25565", use Docker to map ports instead or in addition: https://docs.docker.com/get-started/docker-concepts/running-containers/publishing-ports/
+#      ZENITH_IP: optional - default:"localhost", purely informational "Proxy IP" shown in Zenith's notifications for users
+#         equivalent command: https://wiki.2b2t.vc/Commands/#serverconnection
     stdin_open: true
     tty: true
