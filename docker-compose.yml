@@ -3,6 +3,8 @@ services:
     image: ghcr.io/rfresh2/zenithproxy:latest
     ports:
       - '25565:25565'
+    volumes:
+      - zenithdata:/opt/ZenithProxy
     environment:
 #     Discord setup guide: https://wiki.2b2t.vc/Discord-Bot-Guide/
       ZENITH_DISCORD_TOKEN: editme
@@ -18,3 +20,6 @@ services:
 #         equivalent command: https://wiki.2b2t.vc/Commands/#serverconnection
     stdin_open: true
     tty: true
+
+volumes:
+  zenithdata:

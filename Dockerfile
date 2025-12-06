@@ -5,11 +5,11 @@ ENV ARCH_FILENAME=""
 
 #  Set ARCH_FILENAME based on TARGETARCH as "aarch64" is used instead of "arm64" in the filename
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
-        ARCH_FILENAME="amd64"; \
+    ARCH_FILENAME="amd64"; \
     elif [ "$TARGETARCH" = "arm64" ]; then \
-        ARCH_FILENAME="aarch64"; \
+    ARCH_FILENAME="aarch64"; \
     else \
-        echo "Unsupported architecture: $TARGETARCH" && exit 1; \
+    echo "Unsupported architecture: $TARGETARCH" && exit 1; \
     fi && \
     mkdir /opt/ZenithProxy && \
     apt-get update && apt-get install -y wget unzip && \
@@ -20,4 +20,5 @@ RUN if [ "$TARGETARCH" = "amd64" ]; then \
 
 EXPOSE 25565
 WORKDIR /opt/ZenithProxy
+VOLUME /opt/ZenithProxy
 CMD ./launch --unattended
