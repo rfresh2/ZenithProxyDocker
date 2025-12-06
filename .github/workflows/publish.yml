@@ -2,12 +2,14 @@ name: Publish ZenithProxy Docker Image to Github Packages
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types: [launcher-release]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
