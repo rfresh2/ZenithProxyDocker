@@ -1,22 +1,16 @@
 FROM --platform=$TARGETPLATFORM ubuntu:noble
 
 ARG TARGETARCH
-ENV ARCH_FILENAME=""
+# ZenithProxy uses the name "aarch64" instead of docker's "arm64"
+ENV ZENITH_ARCH_ID=${TARGETARCH/arm64/aarch64}
 
-#  Set ARCH_FILENAME based on TARGETARCH as "aarch64" is used instead of "arm64" in the filename
-RUN if [ "$TARGETARCH" = "amd64" ]; then \
-    ARCH_FILENAME="amd64"; \
-    elif [ "$TARGETARCH" = "arm64" ]; then \
-    ARCH_FILENAME="aarch64"; \
-    else \
-    echo "Unsupported architecture: $TARGETARCH" && exit 1; \
-    fi && \
-    mkdir /opt/ZenithProxy && \
-    apt-get update && apt-get install -y wget unzip && \
-    cd /opt/ZenithProxy && \
-    wget https://github.com/rfresh2/ZenithProxy/releases/download/launcher-v3/ZenithProxy-launcher-linux-${ARCH_FILENAME}.zip && \
-    unzip ZenithProxy-launcher-linux-${ARCH_FILENAME}.zip && \
-    rm ZenithProxy-launcher-linux-${ARCH_FILENAME}.zip
+RUN apt-get update \
+    && apt-get install -y wget unzip \
+    && mkdir -p /opt/ZenithProxy \
+    && cd /opt/ZenithProxy \
+    && wget "https://github.com/rfresh2/ZenithProxy/releases/download/launcher-v3/ZenithProxy-launcher-linux-$ZENITH_ARCH_ID.zip" \
+    && unzip "ZenithProxy-launcher-linux-$ZENITH_ARCH_ID.zip" \
+    && rm "ZenithProxy-launcher-linux-$ZENITH_ARCH_ID.zip"
 
 EXPOSE 25565
 WORKDIR /opt/ZenithProxy
