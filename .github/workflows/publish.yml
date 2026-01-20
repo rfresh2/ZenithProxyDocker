@@ -11,6 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Set Alpine Container Tag Var
+        run: |
+          echo "ALPINE_CONTAINER_TAG=ghcr.io/${GITHUB_REPOSITORY_OWNER@L}/zenithproxy:latest-alpine" >> $GITHUB_ENV
+
       - name: Set Container Tag Var
         run: |
           echo "CONTAINER_TAG=ghcr.io/${GITHUB_REPOSITORY_OWNER@L}/zenithproxy:latest" >> $GITHUB_ENV
@@ -27,6 +31,14 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push alpine image
+        uses: docker/build-push-action@v6
+        with:
+          file: ./alpine.Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.ALPINE_CONTAINER_TAG }}
 
       - name: Build and push multi-platform image
         uses: docker/build-push-action@v6

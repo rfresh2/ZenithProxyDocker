@@ -15,7 +15,7 @@ For general Docker usage, see [Docker CLI](https://docs.docker.com/reference/cli
 
 # Usage
 
-## Docker Compose
+## Option 1: Docker Compose
 
 Edit the `docker-compose.yml` file to set required environment variables
 
@@ -32,7 +32,7 @@ Then run:
 docker compose up -d
 ```
 
-## Docker CLI:
+## Option 2: Docker CLI:
 
 ```bash
 docker run \
@@ -45,7 +45,9 @@ docker run \
   ghcr.io/rfresh2/zenithproxy:latest
 ```
 
-## Docker Package
+## Docker Image
+
+For use in whatever runner you choose.
 
 https://github.com/rfresh2/ZenithProxyDocker/pkgs/container/zenithproxy
 
@@ -64,3 +66,17 @@ Environment variables are used to configure the ZenithProxy launcher without inp
 Many are optional, some are required.
 
 For a full list, see docker-compose.yml
+
+## Alpine Linux
+
+[Alpine Linux](https://en.wikipedia.org/wiki/Alpine_Linux) is a lightweight Linux distribution based on musl libc.
+
+An additional `alpine.Dockerfile` and release is provided if you prefer it
+
+Tag: `ghcr.io/rfresh2/zenithproxy:latest-alpine`
+
+the Alpine version only supports the `java` release channel
+
+meaning it may end up being more lightweight to use the default ubuntu based `Dockerfile`
+
+because the ubuntu version can use the graalvm compiled `linux` release channel
