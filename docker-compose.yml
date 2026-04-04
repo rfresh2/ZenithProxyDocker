@@ -12,7 +12,7 @@ services:
 #      ZENITH_DISCORD_DISABLED: optional, if set "true" the above discord env variables do not need to be set
 #      ZENITH_MC_VERSION: optional - default:"1.21.4"
 #      ZENITH_PLATFORM: optional - default:"linux", or "java"
-#         more info: https://wiki.2b2t.vc/ZenithProxy/Setup/#release-channels
+#         more info: https://wiki.2b2t.vc/Setup/#release-channels
 #      ZENITH_PORT: optional - default:"25565", use Docker to map ports instead or in addition: https://docs.docker.com/get-started/docker-concepts/running-containers/publishing-ports/
 #      ZENITH_IP: optional - default:"localhost", purely informational "Proxy IP" shown in Zenith's notifications for users
 #         equivalent command: https://wiki.2b2t.vc/Commands/#serverconnection
