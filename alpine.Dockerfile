@@ -3,7 +3,7 @@
 # so if you need plugins, this may be an option to test
 # but otherwise, i recommend using the default ubuntu dockerfile on the `linux` release channel
 
-FROM --platform=$TARGETPLATFORM eclipse-temurin:25.0.1_8-jre-alpine-3.23
+FROM --platform=$TARGETPLATFORM eclipse-temurin:25.0.3_9-jre-alpine-3.23
 
 ARG TARGETARCH
 # ZenithProxy uses the name "aarch64" instead of docker's "arm64"

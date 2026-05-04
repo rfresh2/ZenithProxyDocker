@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM ubuntu:noble
+FROM --platform=$TARGETPLATFORM ubuntu:resolute
 
 ARG TARGETARCH
 # ZenithProxy uses the name "aarch64" instead of docker's "arm64"
