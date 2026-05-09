@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://discord.gg/nJZrSaRKtb">
-  <img alt="Discord" src="https://dcbadge.vercel.app/api/server/nJZrSaRKtb">
+  <img alt="Discord" src="https://dcbadge.limes.pink/api/server/nJZrSaRKtb">
   </a>
 </p>
 
@@ -12,6 +12,8 @@
 This repo contains a Dockerfile and docker-compose.yml to run ZenithProxy in a container.
 
 For general Docker usage, see [Docker CLI](https://docs.docker.com/reference/cli/docker/)
+
+For general ZenithProxy setup docs, see the [wiki](https://wiki.2b2t.vc)
 
 # Usage
 
