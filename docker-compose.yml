@@ -3,6 +3,9 @@ services:
     image: ghcr.io/rfresh2/zenithproxy:latest
     ports:
       - '25565:25565'
+    volumes:
+      # create a unique volume for each instance
+      - zenithproxy:/opt/ZenithProxy
     environment:
 #     Discord setup guide: https://wiki.2b2t.vc/Discord-Bot-Guide/
       ZENITH_DISCORD_TOKEN: editme
@@ -18,3 +21,23 @@ services:
 #         equivalent command: https://wiki.2b2t.vc/Commands/#serverconnection
     stdin_open: true
     tty: true
+
+    # you can add more instances like this:
+#  zenithproxy2:
+#    image: ghcr.io/rfresh2/zenithproxy:latest
+#    ports:
+#      - '25566:25565'
+#    volumes:
+#      - zenithproxy2:/opt/ZenithProxy
+#    environment:
+#      ZENITH_DISCORD_TOKEN: editme
+#      ZENITH_DISCORD_CHANNEL_ID: editme
+#      ZENITH_DISCORD_ROLE_ID: editme
+#    stdin_open: true
+#    tty: true
+
+
+volumes:
+  # create a unique volume for each instance
+  zenithproxy:
+#  zenithproxy2:

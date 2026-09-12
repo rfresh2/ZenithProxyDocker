@@ -22,10 +22,10 @@ For general ZenithProxy setup docs, see the [wiki](https://wiki.2b2t.vc)
 Edit the `docker-compose.yml` file to set required environment variables
 
 ```yaml
-    environment:
-      ZENITH_DISCORD_TOKEN: <token>
-      ZENITH_DISCORD_CHANNEL_ID: <channel id>
-      ZENITH_DISCORD_ROLE_ID: <role id>
+environment:
+  ZENITH_DISCORD_TOKEN: <token>
+  ZENITH_DISCORD_CHANNEL_ID: <channel id>
+  ZENITH_DISCORD_ROLE_ID: <role id>
 ```
 
 Then run:
@@ -38,12 +38,13 @@ docker compose up -d
 
 ```bash
 docker run \
-  -d \
+  --detach \
   --name zenithproxy \
-  -e ZENITH_DISCORD_TOKEN=<token> \
-  -e ZENITH_DISCORD_CHANNEL_ID=<channel id> \
-  -e ZENITH_DISCORD_ROLE_ID=<role id> \
-  -p 25565:25565 \
+  --env ZENITH_DISCORD_TOKEN=<token> \
+  --env ZENITH_DISCORD_CHANNEL_ID=<channel id> \
+  --env ZENITH_DISCORD_ROLE_ID=<role id> \
+  --publish 25565:25565 \
+  --volume zenithproxy:/opt/ZenithProxy \
   ghcr.io/rfresh2/zenithproxy:latest
 ```
 
