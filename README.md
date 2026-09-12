@@ -74,12 +74,12 @@ For a full list, see docker-compose.yml
 
 [Alpine Linux](https://en.wikipedia.org/wiki/Alpine_Linux) is a lightweight Linux distribution based on musl libc.
 
-An additional `alpine.Dockerfile` and release is provided if you prefer it
+An additional `alpine.Dockerfile` and release is provided as an option
 
 Tag: `ghcr.io/rfresh2/zenithproxy:latest-alpine`
 
-the Alpine version only supports the `java` release channel
+the Alpine image only supports ZenithProxy's `java` release channel
 
-meaning it may end up being more lightweight to use the default ubuntu based `Dockerfile`
+so if you use ZenithProxy plugins, Alpine could be a good option 
 
-because the ubuntu version can use the graalvm compiled `linux` release channel
+but otherwise the default Ubuntu image (with `linux` release channel) will use less ram
